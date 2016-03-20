@@ -5,19 +5,19 @@ using namespace std;
 class Employee
 {
 protected:
-	string Name;
-	int StaffNum;
-	double Salary;
 	static int numberOfEmployees;
 public:
-	virtual string name();
-	virtual int staffNumber();
+	string name();
+	int staffNumber();
 	virtual double salary();
 };
 
 class SalaryEmployee : public Employee {
 protected:
 	double salary;
+	string Name;
+	int StaffNum;
+	double Salary;
 public:
 	SalaryEmployee(int StaffNum_in, string name_in);
 	void setSalary(double salary_in);
