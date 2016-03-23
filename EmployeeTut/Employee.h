@@ -6,6 +6,9 @@ class Employee
 {
 protected:
 	static int numberOfEmployees;
+	double Salary;
+	string Name;
+	int StaffNum;
 public:
 	string name();
 	int staffNumber();
@@ -13,11 +16,7 @@ public:
 };
 
 class SalaryEmployee : public Employee {
-protected:
-	double salary;
-	string Name;
-	int StaffNum;
-	double Salary;
+
 public:
 	SalaryEmployee(int StaffNum_in, string name_in);
 	void setSalary(double salary_in);
@@ -26,7 +25,7 @@ public:
 
 class HourlyEmployee : public Employee {
 protected:
-	double hourlyR_in;
+	double hourlyR;
 	int HoursW;
 public:
 	HourlyEmployee(int StaffNum_in, string name_in);
