@@ -5,14 +5,17 @@ using namespace std;
 class Employee
 {
 protected:
-	static int numberOfEmployees;
 	double Salary;
 	string Name;
 	int StaffNum;
+	static int numberOfEmployee;
 public:
+	Employee();
 	string name();
 	int staffNumber();
+	int getNumOfEmployee();
 	virtual double salary();
+	~Employee();
 };
 
 class SalaryEmployee : public Employee {
@@ -21,6 +24,7 @@ public:
 	SalaryEmployee(int StaffNum_in, string name_in);
 	void setSalary(double salary_in);
 	virtual double salary();
+	~SalaryEmployee();
 };
 
 class HourlyEmployee : public Employee {
@@ -32,6 +36,7 @@ public:
 	void setHourlyRate(double hourlyR_in);
 	void setHoursWorked(int HoursW_in);
 	virtual double salary();
+	~HourlyEmployee();
 };
 
 class CommissionEmployee : public Employee {
@@ -45,4 +50,5 @@ public:
 	void setRate(double rate_in);
 	void setRevenue(int rev_in);
 	virtual double salary();
+	~CommissionEmployee();
 };
