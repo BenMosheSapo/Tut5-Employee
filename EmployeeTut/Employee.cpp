@@ -100,16 +100,16 @@ CommissionEmployee::~CommissionEmployee() {
 int main() {
 	double totalWages = 0;
 	Employee *EmployeePtr;
-	SalaryEmployee S_Emp(123,"Dan");
+	SalaryEmployee *S_Emp = new SalaryEmployee(123,"Dan");
 	HourlyEmployee H_Emp(456, "Ben");
 	CommissionEmployee C_Emp(789, "John");
-	S_Emp.setSalary(500);
+	S_Emp->setSalary(500);
 	H_Emp.setHourlyRate(3.4);
 	H_Emp.setHoursWorked(50);
 	C_Emp.setBaseSalary(200);
 	C_Emp.setRate(3.2);
 	C_Emp.setRevenue(900);
-	EmployeePtr = &S_Emp;
+	EmployeePtr = S_Emp;
 	totalWages += EmployeePtr->salary();
 	EmployeePtr = &H_Emp;
 	totalWages += EmployeePtr->salary();
@@ -117,6 +117,6 @@ int main() {
 	totalWages += EmployeePtr->salary();
 	cout << totalWages << endl;
 	cout << EmployeePtr->getNumOfEmployee() << endl;
-	//delete EmployeePtr;
-	cout << H_Emp.getNumOfEmployee()<<endl;
+	delete S_Emp;
+	cout << C_Emp.getNumOfEmployee()<<endl;
 }
